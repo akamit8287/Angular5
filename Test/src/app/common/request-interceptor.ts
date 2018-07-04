@@ -19,12 +19,9 @@ import {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       return next.handle(request).pipe(
         catchError(response => {
-            debugger;
             if (response instanceof HttpErrorResponse) {
-                debugger;
               // Check if this error has a 2xx status
               if (this.is2xxStatus(response)) {
-                debugger;
                 if(response.status == 201) {
                     return of(new HttpResponse({
                         headers: response.headers,
