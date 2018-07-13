@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
     username: "",
     password: ""
   };
-  isLoginPage:boolean = true;
   constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
@@ -26,7 +25,6 @@ export class LoginComponent implements OnInit {
 
     this.apiService.post("https://riskcanvas3.financialcrimestechnology.com/cas/v1/tickets", data).subscribe(
       result => {
-        this.isLoginPage = false;
         this.router.navigate(['dashboard']);
        console.log(result);
       }

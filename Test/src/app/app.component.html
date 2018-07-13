@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }} {{isLoginPage}}!
+    Welcome to {{ title }}! <span><a routerLink="" *ngIf="router.url != '/login'" style="float: right; margin-right: 5%">Logout</a></span>
   </h1>
+
     <br><br><br>
     <router-outlet></router-outlet>
 </div>
